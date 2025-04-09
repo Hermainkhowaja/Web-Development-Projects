@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  <!-- Sets character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design settings -->
+    <title>snake bar project</title>
+    
+    <!-- Linking external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Linking external JavaScript file -->
+    <script src="scripy.js" defer></script>
+
+    <!-- FontAwesome icon library -->
+    <script src="https://kit.fontawesome.com/bed7419c9e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Buttons to trigger toast notifications -->
+    <div class="buttons">
+        <button onclick="showToast(successMsg)">Success</button>
+        <button onclick="showToast(errorMsg)">Error</button>
+        <button onclick="showToast(invalidMsg)">Invalid</button>
+    </div>
+
+    <!-- Container for toast notifications -->
+    <div id="toastBox"></div>
+</body>
+</html>

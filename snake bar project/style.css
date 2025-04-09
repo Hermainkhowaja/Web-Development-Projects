@@ -1,0 +1,109 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, 'poppins';
+}
+
+/* Background color for the body */
+body {
+    background: #f7edff;
+}
+
+/* Styling the buttons */
+.buttons {
+    margin: 50px;
+}
+
+.buttons button {
+    background: #333;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Toast notification container */
+#toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Toast notification styles */
+.toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    /* Initial animation to slide in */
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+
+/* Keyframe animation for sliding in */
+@keyframes moveleft {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Icon styling inside the toast */
+.toast i {
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+/* Color customization for different message types */
+.toast.error i {
+    color: red;
+}
+
+.toast.invalid i {
+    color: orange;
+}
+
+/* Progress bar animation */
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 6s linear forwards;
+}
+
+/* Progress bar animation (shrinks width) */
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+/* Progress bar color for error */
+.toast.error::after {
+    background: red;
+}
+
+/* Progress bar color for invalid */
+.toast.invalid::after {
+    background: orange;
+}
